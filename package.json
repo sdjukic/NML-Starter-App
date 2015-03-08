@@ -5,7 +5,8 @@
   "description": "GameDevelopedAtNYHack2015",
   "dependencies": {
   	    "socket.io": "latest",
-        "express": "latest"
+        "express": "latest",
+        "jade": "latest"
   },
   "scripts": {
     "start": "node server.js"
