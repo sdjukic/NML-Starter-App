@@ -1,7 +1,12 @@
 {
-  "name": "footprint",
+  "name": "gifsAgainstHumanity",
   "version": "0.1.0",
   "private": true,
+  "description": "GameDevelopedAtNYHack2015",
+  "dependencies": {
+  	    "socket.io": "latest",
+        "express": "latest"
+  },
   "scripts": {
     "start": "node server.js"
   }
