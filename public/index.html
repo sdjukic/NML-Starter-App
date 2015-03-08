@@ -45,12 +45,10 @@
     </form>
 
     <div id="data">
-      <h1>{{ title | uppercase }}</h1>
-         <span class='icono-caretLeftCircle' ></span>
-         <span class='icono-caretRightCircle' ></span>
-        <ul>
+
+        <ul id='deck'>
          
-          <li v-repeat="items">
+          <li class='cards' v-repeat="items">
             <img src="{{ pageText }}" width=100 height=100 />
           </li>
          

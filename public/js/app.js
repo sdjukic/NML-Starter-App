@@ -7,11 +7,19 @@
  */
 /*jshint unused: false */
 /* global window, $, appconfig, NML, document, device */
+var data = new Vue({
+        el: '#data',
+        data: {
+            title: 'Results',
+            items: []
+        }
+});
 var app = {
     /**
      * Callback for NML.get function
      * This is where we will process the data
      */
+   
     onGetData: function (nmldata) {
         console.log("Got NML Data");
         console.log(nmldata);
@@ -30,19 +38,12 @@ var app = {
         app.nml.setHomePageId(app.json.ListPage["@attributes"].id);
         var array = app.json.ListPage.pages.BasicPage;
         if(array){
-            /*for(var i = 0; i < array.length; ++i){
-                  console.log(array[i]['pageText']);
-            }
-            */
-            var data = new Vue({
-              el: '#data',
-              data: {
-                title: 'Results',
-                items: array       
-              }
-            });
-            $('#data').toggle();
+
+            data.$set('items', array.slice(0,6));  
+            
         }
+            
+          
     },
     /**
      * Give all the GUI elements their event listeners
@@ -69,7 +70,7 @@ var app = {
     initialize: function () {
         console.log("App Init");
         app.bindEvents();
-        $('#data').toggle();
+        //$('#data').toggle();
     },
     // Bind Event Listeners
     bindEvents: function () {
